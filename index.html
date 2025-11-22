@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tvůj denní tip</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; background-color: #f7f7f7; }
+    #tip { margin: 20px; font-size: 24px; color: #333; }
+    button { padding: 15px 30px; font-size: 18px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 10px; }
+    button:hover { background-color: #0056b3; }
+  </style>
+</head>
+<body>
+  <h1>Tvůj denní tip pro osobní růst</h1>
+  <div id="tip">Klikni na tlačítko a získej nový tip!</div>
+  <button onclick="novyTip()">Nový tip</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+const tipy = [
+  "Začni den s pozitivní afirmací.",
+  "Udělaj si 10 minut pro meditaci.",
+  "Sepiš si tři věci, za které jsi dnes vděčný.",
+  "Přečti si 5 stránek knihy, která tě posouvá.",
+  "Pomoz dnes někomu bez očekávání odměny.",
+  "Zamysli se nad jedním cílem, kterého chceš dosáhnout tento týden."
+];
+
+function novyTip() {
+  const nahodnyIndex = Math.floor(Math.random() * tipy.length);
+  document.getElementById('tip').innerText = tipy[nahodnyIndex];
+}
